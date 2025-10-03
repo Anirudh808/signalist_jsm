@@ -114,8 +114,9 @@ export const getUserWatchlist = async () => {
 // Get user's watchlist with stock data
 export const getWatchlistWithData = async () => {
   try {
+    const headerList = await headers();
     const session = await auth.api.getSession({
-      headers: await headers(),
+      headers: headerList,
     });
     if (!session?.user) redirect("/sign-in");
 
