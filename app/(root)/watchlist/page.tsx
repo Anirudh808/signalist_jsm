@@ -4,6 +4,8 @@ import SearchCommand from "@/components/SearchCommand";
 import { WatchlistTable } from "@/components/WatchListTable";
 import { getWatchlistWithData } from "@/lib/actions/watchlist.actions";
 
+export const dynamic = "force-dynamic";
+
 const Watchlist = async () => {
   const watchlist = await getWatchlistWithData();
   const initialStocks = await searchStocks();
