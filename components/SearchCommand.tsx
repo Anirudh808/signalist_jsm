@@ -57,7 +57,7 @@ export default function SearchCommand({
 
   useEffect(() => {
     debouncedSearch();
-  }, [debouncedSearch, searchTerm]);
+  }, [searchTerm]);
 
   const handleSelectStock = () => {
     setOpen(false);
@@ -123,7 +123,7 @@ export default function SearchCommand({
                     className="search-item-link"
                   >
                     <TrendingUp className="h-4 w-4 text-gray-500" />
-                    <div className="flex-1">
+                    <div className="w-1/2">
                       <div className="search-item-name">{stock.name}</div>
                       <div className="text-sm text-gray-500">
                         {stock.symbol} | {stock.exchange} | {stock.type}
