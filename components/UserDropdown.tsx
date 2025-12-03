@@ -23,14 +23,19 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
         router.push("/sign-in");
     }
 
+    const userProfile = () => {
+        const wordsInUserName = user.name.split(" ");
+        return userProfileLogo = wordsInUserName[0][0].toUpperCase() + wordsInUserName[-1][0].toUpperCase();
+    }
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-3 text-gray-4 hover:text-yellow-500">
                     <Avatar className="h-8 w-8">
-                        <AvatarImage src="https://avatars.githubusercontent.com/u/153423955?s=280&v=4" />
+                        {/* <AvatarImage src="https://avatars.githubusercontent.com/u/153423955?s=280&v=4" /> */}
                         <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
-                            {user.name[0]}
+                            {userProfile()}
                         </AvatarFallback>
                     </Avatar>
                     <div className="hidden md:flex flex-col items-start">
